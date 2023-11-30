@@ -5,7 +5,7 @@ export const GetToken = async (account_name, email, password) => {
     console.log(account_name,email,password)
     return axios({
       method: "get",
-      url:"https://cellphone.imonggo.com/api/tokens.json?&account_name=cellphone&email=cellphone@gmail.com&password=cellphoone123",
+      url:`https://${account_name}.imonggo.net/api/tokens.json?&account_name=${account_name}&email=${email}&password=${password}`,
       headers: {
         "Content-Type": "application/json",
         "User-Agent": "com.imonggo.stockroom",
