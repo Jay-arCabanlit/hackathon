@@ -1,7 +1,7 @@
 // apiConfig.js
 
 import axios from "axios";
-import { Base64 } from 'js-base64';
+import { Base64,encode } from 'js-base64';
 
 const api = axios.create({
   baseURL: "", // Dynamic API base URL (initially empty)
@@ -15,7 +15,7 @@ const api = axios.create({
 
 // Function to set the dynamic API token
 export const setAuthToken = (token) => {
-  let encoded = Base64.encode(token);
+  let encoded = encode(token);
   if (token) {
     api.defaults.headers.common["Authorization"] = `Basic ${encoded}`;
   } else {

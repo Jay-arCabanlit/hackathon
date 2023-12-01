@@ -38,6 +38,8 @@ export const get = async (endpoint) => {
 // POST request
 export const post = async (endpoint, data) => {
   try {
+    console.log(endpoint,'endpoint')
+    console.log(data,'hey data')
     const response = await api.post(endpoint, data);
     return response;
   } catch (error) {
